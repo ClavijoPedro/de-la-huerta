@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De la huerta</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-----------favicon----------------------------------------------------------->
+    <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="media/" type="image/x-icon">
+    <!-----------boxicons--------------------------------------------------------->
+    <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+    <!-----------css--------------------------------------------------------->
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+    <div id="slideHome" class="carousel slide" data-ride="carousel" data-interval="5000" > 
+        <div id="header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 px-5">
+                <a class="navbar-brand" href="index.html"><img src="media/logo-huerta.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#footer">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" type="button"  data-toggle="modal" data-target="#staticBackdrop"><i class='bx bx-cart bx-md bx-fw' style='color:#ffffff'></i></a>
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="media/verdura/vegetables-slide.jpg" class="d-block w-100" alt="mesa vegetales">
+          </div>
+          <div class="carousel-item">
+            <img src="media/verdura/vegetables1-slide.jpg" class="d-block w-100" alt="mesa vegetales">
+          </div>
+          <div class="carousel-item">
+            <img src="media/verdura/vegetables2-slide.jpg" class="d-block w-100" alt="mesa vegetales">
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Alimentación saludable</h1>
+            <p>Productos totalmente orgánicos libres de agroquimicos</p>
+          </div>
+        </div>
+    </div>
+    <section id="productos">
+        <h2 class="text-center mb-5">Mercado de Verduras</h2>
+        <div class="container">
+          <div id="verdura" class="productos row d-flex justify-content-around flex-wrap"></div>
+        </div>
+        <h2 class="text-center my-5">Mercado de Frutas</h2>
+        <div class="container">
+          <div id="fruta" class="productos row d-flex justify-content-around flex-wrap"></div>
+        </div>     
+    </section>
+    <section>
+        <div class="modal fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header ">
+                <h5 class="modal-title m-auto" id="staticBackdropLabel">Tu Carrito</h5>
+              </div>
+              <div class="modal-body">
+                <ul id="carrito">
+                  <li>papa--------------------------------------------$80</li>
+                  <li>batata------------------------------------------$100</li>
+                  <li>morron----------------------------------------$60</li>
+                  <li>zapallo-----------------------------------------$75</li>
+                  <li>zanahoria-------------------------------------$90</li>
+                  <li>ajo----------------------------------------------$200</li>
+                  <li>cebolla-----------------------------------------$40</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Limpiar</button>
+                <button type="button" class="btn btn-primary">Confirmar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <div id="footer" class=" d-flex justify-content-around align-items-center mt-5">
+        <div class="logo d-none d-md-block p-5">
+          <a href="#header"><img src="media/logo-huerta.png" alt="logo"></a>
+        </div>
+        <div class="maps py-5 d-none d-lg-block"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.6828032981375!2d-58.44732878465831!3d-34.561585762777284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5c9455e0e45%3A0x77531149383044a9!2sAv%20Libertador%20Y%20Pampa!5e0!3m2!1ses!2sar!4v1628642322509!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        <div class="contacto d-none d-md-block">
+            <ul>
+                <li>direccion</li>
+                <li>telefono</li>
+                <li>horario</li>
+            </ul>
+        </div>
+        <div class="redes d-flex flex-lg-column mr-5 ">
+          <a href="#"><i class='bx bxl-facebook-square bx-lg mb-lg-4' style='color:#ffff' ></i></a>
+          <a href="#"><i class='bx bxl-instagram bx-lg mb-lg-4' style='color:#ffff'  ></i></a>
+          <a href="#"><i class='bx bxl-whatsapp bx-lg ' style='color:#ffff'  ></i></a>
+        </div>
+    </div>
+    <!-- ---------------------------scripts------------------------->
+    <script src="js/carrito.js"></script>
+    <!-- ----------------------botstrap-------------------------- -->
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+#footer{
+    background-color: $bgdColor-black;
+    .contacto{
+        ul{
+            li{
+                list-style: none;
+                text-transform: uppercase;
+                color: $fontColor-light;
+
+            } 
+        }
+    }  
+}
