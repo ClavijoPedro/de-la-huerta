@@ -7,3 +7,28 @@ body{
     text-transform: uppercase;
 
 }
+.tH2{
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.count{
+    position: absolute;
+    top:60%;
+    right: 2%;
+    font-weight: 800;
+    color: rgb(182, 0, 0);
+    background-color: rgb(113, 211, 113);
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    border: 2px solid rgb(17, 85, 0);
+    box-shadow: 1px 1px 2px black;
+}
+.bg-greenlight{
+    background-color: rgb(173, 253, 170);
+}
+.objfit{
+    height: 90vh;
+    object-fit: cover;
+}
