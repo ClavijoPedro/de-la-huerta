@@ -1,16 +1,16 @@
 #productos{
     .select{
         background-color: $bgdColor-black;
-        padding: 100px 0;
+        padding: 75px 0;
         margin: 0 0 5rem;
         h2{
             color: $titleColor-white;
-            font-size: 3rem;
+            font-size: 2rem;
         }
         div{
             .tH2{
                 color:$fontColor-light;
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
         }
         #selector{
@@ -22,6 +22,13 @@
             color: rgb(182, 0, 0);
             border-radius: 5px;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.288);
+            text-align-last: center;
+            &:focus-visible{
+                outline:none;
+            }
+            option{
+                text-align: center !important;
+            }
         }
     }
     .productos{
@@ -44,6 +51,61 @@
                     font-size: 1rem;
                     font-weight: 600;
                     color: $fonColor-dark;
+                }
+            }
+        }
+    }
+}
+@media all and(min-width:768px){
+    #productos{
+        .select{
+            h2{
+                font-size: 3rem;
+            }
+            div{
+                .tH2{
+                    font-size: 1.5rem;
+                }
+            }
+            #selector{
+                width: 230px;
+                height: 35px; 
+                font-weight: 600;
+                border: 2px solid green;
+                background-color: rgb(113, 211, 113);
+                color: rgb(182, 0, 0);
+                border-radius: 5px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.288);
+                text-align-last: center;
+                &:focus-visible{
+                    outline:none;
+                }
+                option{
+                    text-align: center !important;
+                }
+            }
+        }
+        .productos{
+            .item{
+                &:hover{
+                    transform: scale(1.05);
+                    transition: all 300ms ease-in-out;
+                }
+                .cardBody{
+                    height:350px;
+                    overflow: hidden;
+                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.205);
+                    text-transform: uppercase;
+                    img{
+                        height:80%;
+                        object-fit: cover; 
+                    }
+                    .description{
+                        height: 20%;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: $fonColor-dark;
+                    }
                 }
             }
         }

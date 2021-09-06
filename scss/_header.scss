@@ -1,4 +1,38 @@
 #header{
     width: 100%;
     background-color: $bgdColor-black;
+    .navbar{
+        .navbar-brand{
+            img{
+                width: 140px;
+            }
+        }
+        .navbar-collapse{
+            padding: 2rem 0;
+            .sumAddCart{
+                position: relative;
+            }
+        }
+    }
+}
+
+@media all and(min-width:768px){
+    #header{
+        .navbar{
+            .navbar-brand{
+                img{
+                    width: 174px;
+                }
+            }
+        }
+    }
+}
+@media all and(min-width: 992px){
+    #header{
+        .navbar{
+            .navbar-collapse{
+                padding: 0;
+            }
+        }
+    }
 }

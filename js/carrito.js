@@ -2,30 +2,54 @@ const carrito = [];
 let contador = 0;
 /* agrega los productos al carrito DOM y al array carrito*/
 function addCarrito(e){
-    alert("Producto agregado al carrito")
-    contador++
+    // alert("Producto agregado al carrito")
+    /*traigo lista del local Storage*/
     const lista = traerListaLs();
-    const itemElegido = e.target.parentNode;
-    for(producto of lista){
-        if(itemElegido.querySelector(".prodName").innerText.toLowerCase() === producto.item){
-            itemCarrito = {
-                    cantidad: 1,
-                    item: producto.item,
-                    precio: producto.precio,
-            };
-            let carritoHtml = document.getElementById("carrito");
-            let tr = document.createElement("tr")
-            tr.innerHTML = `<td>${itemCarrito.cantidad}</td>
-                            <td>${itemCarrito.item}</td>
-                            <td>$${itemCarrito.precio * itemCarrito.cantidad}</td>`;
-            carritoHtml.appendChild(tr);
-            carrito.push(itemCarrito); 
-            let iconSum = document.getElementById("quantity");
-            iconSum.innerText = contador;
-            iconSum.classList.add("count");
-        } 
+
+    /*capturo el item elegido en el dom*/
+    const itemElegidoDom = e.target.parentNode;
+
+    /* busco el item en la lista que traje del local Storage*/
+    const itemLista = lista.find(producto => producto.item === itemElegidoDom.querySelector(".prodName").innerText.toLowerCase());
+    console.log(itemLista.item);
+
+    /*le agrego la propiedad cantidad al producto de lista*/
+    itemLista.cantidad = 1;
+
+    /*busco el item en el carrito*/
+    const buscarCarrito = carrito.find(producto => producto.item === itemLista.item);
+
+    /*si el carrito esta vacio  o no esta el itemElegidoDom "undefinded" hace push del itemLista al carrito,
+     sino busca el item en el carrito y aumenta su cantidad*/
+    if(buscarCarrito == undefined){
+        carrito.push(itemLista);
+        contador++;
+    }else{
+        for(let i = 0; i<carrito.length; i++){
+            if(carrito[i].item == itemLista.item){
+                carrito[i].cantidad++ ;
+            }
+        }  
     }
-    console.log(carrito)
+
+    /*le sumo la cantidad de productos al icono carrito en el headesr del DOM*/
+    let iconSum = document.getElementById("quantity");
+    iconSum.innerText = contador;
+    iconSum.classList.add("count");
+    printCarrito(); 
+}
+  
+/*imprimo el carrito en el DOM y muestro totales*/
+function printCarrito(){
+    let carritoHtml = document.getElementById("carrito");
+    carritoHtml.innerHTML = "";
+    for(let i = 0; i< carrito.length; i++){
+        let tr = document.createElement("tr")
+        tr.innerHTML = `<td>${carrito[i].cantidad}</td>
+        <td>${carrito[i].item}</td>
+        <td>$${carrito[i].precio * carrito[i].cantidad}</td>`;
+        carritoHtml.appendChild(tr);
+    }
     total();
     totalIva();
     vaciarCarrito()
@@ -36,7 +60,7 @@ function addCarrito(e){
 function total(){
     let precioTotal = 0;
     for(let i = 0; i< carrito.length; i++){
-        precioTotal += carrito[i].precio;
+        precioTotal += carrito[i].precio * carrito[i].cantidad;
     }
     let totalHtml = document.getElementById("total");
     totalHtml.innerText = `Total: $ ${precioTotal}`;
@@ -47,7 +71,7 @@ function total(){
 function totalIva(){
     let precioTotalIva = 0;
     for(let i = 0; i< carrito.length; i++){
-        precioTotalIva += carrito[i].precio * 1.21;
+        precioTotalIva += carrito[i].precio * carrito[i].cantidad * 1.21;
     }
     let totalHtml = document.getElementById("totalIva");
     totalHtml.innerText = `Total Iva: $ ${precioTotalIva.toFixed()}`;
@@ -84,7 +108,3 @@ function confirmCarrito(){
         }
     })
 }
-
-
-
-

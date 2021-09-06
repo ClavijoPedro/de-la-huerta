@@ -1,19 +1,61 @@
 #slideHome{
     .carousel-inner{
+        .carousel-item{
+            img{
+            height: 50vh;
+            object-fit: cover;
+            }
+        }
         .carousel-caption{
             bottom: 0%;
             left: 0;
             background-color: rgba(0, 0, 0, 0.37);
             width: 100%;
             height:100%;
-            padding-top: 18rem;
+            padding-top: 4rem;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.562);
             h1{
                 font-weight: 800;
-                font-size: 3rem;
+                font-size: 2.2rem;
             }
             p{
-                font-size: 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+@media all and(min-width:768px){
+    #slideHome{
+        .carousel-inner{
+            .carousel-item{
+                img{
+                height: 60vh;
+                }
+            }
+            .carousel-caption{
+                padding-top: 14.5rem;
+                h1{
+                    font-size: 3rem;
+                }
+                p{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+@media all and(min-width: 992px){
+    #slideHome{
+        .carousel-inner{
+            .carousel-item{
+                img{
+                height: 90vh;
+                }
+            }
+            .carousel-caption{
+                padding-top: 18rem;
+
             }
         }
     }

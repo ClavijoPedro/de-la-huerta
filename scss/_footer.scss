@@ -9,5 +9,15 @@
 
             } 
         }
+    }
+    .redes{
+        width: 75%;
     }  
+}
+@media all and(min-width: 992px){
+    #footer{
+        .redes{
+            width: 5%;
+        }  
+    }
 }

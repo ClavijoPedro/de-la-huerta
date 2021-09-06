@@ -25,7 +25,7 @@ function crearCards(tipoProducto, productID){
     /* por cada item de la lista genera la estructura de la card */ 
     for(const producto of filtrarproducto){
         let item = document.createElement("div");
-        item.classList.add(`item`, `mb-5`, `col-sm-12`, `col-md-6`, `col-lg-3`);
+        item.classList.add(`item`, `mb-5`, `col-11`, `col-md-6`, `col-lg-3`);
         
         let cardbody = document.createElement("div"); 
         cardbody.classList.add("cardBody", "rounded");
@@ -87,7 +87,11 @@ function filtrarCards(){
         }
     });
 }
+
+/* guardo lista en local Storage*/
 listaToLocStorage();
+/*creo las cards al inicio de la pag (sino arranca vacio)*/
 crearCards("verdura", "cardsProductos");
 crearCards("fruta", "cardsProductos");
+/*activo filtro productos con select dom*/
 filtrarCards();
