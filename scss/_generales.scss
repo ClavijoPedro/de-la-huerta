@@ -2,10 +2,28 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.boton{
-    padding: 2rem;
-    text-transform: uppercase;
-
+.btn-reset{
+    text-shadow: $textShadow;
+    box-shadow: $btn-shadow;
+    background:none;
+    border: 2px solid rgba(0, 0, 0, 0);
+    // padding: 0.25rem 0.5rem;
+    &:focus{
+        outline: none;
+        border:none;
+        box-shadow: none;
+        transform: scale(1.1);
+    }
+    &:hover{
+        transform: scale(1.05);
+        transition: all 500ms;
+    }
+    @media all and(max-width: 340px){
+        padding: 0.25rem 0.5rem;
+    }
+}
+h2{
+    text-shadow: $title-shadow;
 }
 .tH2{
     text-transform: capitalize;
@@ -14,22 +32,31 @@ body{
 }
 .count{
     position: absolute;
-    bottom: -11px;
-    right: -38px;
+    bottom: -8px;
+    right: -28px;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: rgb(182, 0, 0);
     background-color: rgb(113, 211, 113);
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     border: 2px solid rgb(17, 85, 0);
     box-shadow: 1px 1px 2px black;
     @media all and(min-width: 992px){
         bottom: -30px;
-        right: -30px;
+        right: -23px;
     }
+}
+.valContent{
+    border: 2px solid red !important;
+    border-radius: 5px;
 }
 .bg-greenlight{
     background-color: rgb(173, 253, 170);
+}
+.px-lg-6{
+    @media all and(min-width:992px){
+        padding: 0 10rem !important;
+    }
 }

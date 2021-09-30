@@ -6,8 +6,8 @@
     <title>De la huerta</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-----------favicon----------------------------------------------------------->
-    <!-- <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon"> -->
-    <!-- <link rel="icon" href="media/" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="media/faviconn.ico" type="image/x-icon">
+    <link rel="icon" href="media/faviconn.ico" type="image/x-icon">
     <!-----------boxicons--------------------------------------------------------->
     <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
     <!-----------css--------------------------------------------------------->
@@ -33,108 +33,133 @@
             </li>
             <li class="nav-item mt-4 mt-lg-0">
               <i id="btnCarrito" class='nav-link sumAddCart bx bx-cart bx-lg bx-fw' type="button"  data-toggle="modal" data-target="#staticBackdrop" style='color:#ffffff'>
-                <p id="quantity" class="text-center m-0 p-0"></p>
+                <span id="quantity" class="text-center d-flex flex-column justify-content-center m-0 py-0"></span>
               </i>
             </li>
           </ul>
         </div>
       </nav>
     </div>
-    <div id="slideHome" class="carousel slide" data-ride="carousel" data-interval="5000" > 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-              <img src="media/verdura/vegetables-slide.jpg" class="d-block w-100 objfit" alt="mesa vegetales">
-          </div>
-          <div class="carousel-item">
-            <img src="media/verdura/vegetables1-slide.jpg" class="d-block w-100 objfit" alt="mesa vegetales">
-          </div>
-          <div class="carousel-item">
-            <img src="media/verdura/vegetables2-slide.jpg" class="d-block w-100 objfit" alt="mesa vegetales">
-          </div>
-          <div class="carousel-caption d-none d-md-block d-flex align-items-center flex-column">
-              <h1>Alimentación saludable</h1>
-              <p>Productos totalmente orgánicos libres de agroquimicos</p>
-          </div>
+    <div id="slideHome" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000" > 
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="media/verdura/vegetables-slide.jpg" class="d-block w-100 objfit" alt="mesa vegetales">
         </div>
+        <div class="carousel-item">
+          <img src="media/verdura/vegetables1-slide.jpg" class="d-block w-100 objfit" alt="mesa vegetales">
+        </div>
+        <div class="carousel-item">
+          <img src="media/verdura/vegetables2-slide.jpg" class="d-block w-100 objfit" alt="mesa vegetales">
+        </div>
+        <div class="carousel-caption d-none d-md-block d-flex align-items-center flex-column">
+            <h1>Alimentación saludable</h1>
+            <p>Productos totalmente orgánicos libres de agroquimicos</p>
+        </div>
+      </div>
     </div>
     <section id="productos">
-        <div class="container-fluid select d-flex flex-column align-items-center">  
-          <h2 class="text-center mb-3 ">Nuestro Mercado</h2>
-          <div class="text-center">
-            <p class="mb-3 tH2">Elija sus productos</p>
-            <select name="select" id="selector" class="mt-3 text-center">
-              <option  value="verTodo">Ver Todos</option>
-              <option  value="verduras">Verduras</option>
-              <option  value="frutas">Frutas</option>
-            </select>
-          </div>
+      <div class="container-fluid select d-flex flex-column align-items-center">  
+        <h2 class="text-center mb-3 ">Nuestro Mercado</h2>
+        <div class="text-center">
+          <p class="mb-3 tH2">Elija sus productos</p>
+          <select name="select" id="selector" class="mt-3 text-center">
+            <option  value="verTodo">Ver Todos</option>
+            <option  value="verduras">Verduras</option>
+            <option  value="frutas">Frutas</option>
+          </select>
         </div>
-        <div class="container">
-          <div id="cardsProductos" class="productos row d-flex justify-content-around flex-wrap"></div>
+      </div>
+      <div class="container">
+        <div id="cardsProductos" class="productos row d-flex justify-content-around flex-wrap"></div>
+      </div>
+      <div class="container-fluid select d-flex flex-column align-items-center mt-5">  
+        <h2 class="text-center mb-3 ">Nuestras Promos</h2>
+        <p class="mb-3 tH2"></p>
         </div>
+      </div>
+      <div class="container">
+        <div id="cardsPromos" class="productos row d-flex justify-content-around flex-wrap"></div>
+      </div>
     </section>
     <section>
-        <div class="modal modal-carrito fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header ">
-                <h5 class="modal-title m-auto" id="staticBackdropLabel">Tu Carrito</h5>
+      <div class="modal modal-carrito fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h5 class="modal-title m-auto" id="staticBackdropLabel">Tu Carrito</h5>
+            </div>
+            <div class="modal-body p-0">
+              <table class="text-center w-100">
+                <thead>
+                  <tr>
+                    <th class="py-3">kg</th>
+                    <th class="py-3">Producto</th>
+                    <th class="py-3">Precio</th>
+                    <th class="py-3"></th>
+                  </tr>
+                </thead>
+                <tbody id="carrito" >
+                </tbody>
+              </table>
+            </div>
+            <div id="carritoCheck" class="mt-3">                
+            </div>
+            <div class="modal-footer d-flex flex-column flex-lg-row text-center py-4">
+              <div class="totalesCart d-flex">
+                <p id="total" class="mr-4 mb-lg-0">Total: 0</p>
+                <p id="totalIva" class="mb-lg-0">Total iva: 0</p>
               </div>
-              <div class="modal-body p-0">
-                <table class="text-center w-100">
-                  <thead>
-                    <tr>
-                      <th class="py-3">kg</th>
-                      <th class="py-3">Producto</th>
-                      <th class="py-3">Precio</th>
-                    </tr>
-                  </thead>
-                  <tbody id="carrito" >
-                  </tbody>
-                </table>
-                <div id="carritoCheck" class="mt-3">                
-                </div>
-              </div>
-              <div class="modal-footer d-flex flex-column flex-lg-row text-center py-4">
-                <div class="totalesCart d-flex">
-                  <p id="total" class="mr-4 mb-lg-0">Total: 0</p>
-                  <p id="totalIva" class="mb-lg-0">Total iva: 0</p>
-                </div>
-                <div class="botonCart ml-lg-auto">
-                  <button type="button" id="btnLimpiar" class="btn btn-primary">Limpiar</button>
-                  <button type="button" id="confirm" class="btn btn-primary mx-2">Confirmar</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                </div>
+              <div class="botonCart ml-lg-auto d-flex justify-content-around">
+                <button type="button" id="btnLimpiar" class="btn btn-primary btn-reset">Limpiar</button>
+                <button type="button" id="confirm" class="btn btn-primary btn-reset mx-2">Confirmar</button>
+                <button type="button" class="btn btn-secondary btn-reset" data-dismiss="modal">cerrar</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </section>
-    <div id="footer" class=" d-flex justify-content-around align-items-center mt-5">
-        <div class="logo d-none d-md-block p-5">
+    <div id="footer" class="d-flex flex-wrap mt-5">
+      <div class="suscripcion w-100 d-flex flex-column align-items-center">
+        <form id="news" class="text-center py-5 px-4 d-lg-flex align-items-center">
+          <div class="textNews d-flex flex-column ">
+            <h2 class="mb-4">Suscribite</h2>
+            <div class="mx-auto">
+              <p>Enterate de nuestras ofertas</p>
+              <p>Participa en los sorteos</p>
+            </div>
+          </div>
+          <div class="datos d-flex flex-column align-items-center">
+            <input class="mt-5 mb-3 mt-lg-0 text-center" type="text" name="Nombre" id="usName" placeholder="Nombre y apellido" >
+            <input class="mt-4 mb-2 text-center" type="email" name="mail" id="usMail" placeholder="Correo electrónico" >
+            <button type="submit" id="btnForm" class="btn-primary btn-reset rounded mt-4">Suscribirme</button>
+          </div>
+        </form>
+      </div>
+      <div class="contacto w-100 d-flex flex-column flex-md-row justify-content-around align-items-center pt-5 ">
+        <div class="logo mb-5 mb-md-0">
           <a href="#header"><img src="media/logo-huerta.png" alt="logo"></a>
         </div>
-        <div class="maps py-5 d-none d-lg-block "><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.6828032981375!2d-58.44732878465831!3d-34.561585762777284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5c9455e0e45%3A0x77531149383044a9!2sAv%20Libertador%20Y%20Pampa!5e0!3m2!1ses!2sar!4v1628642322509!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded"></iframe></div>
-        <div class="contacto d-none d-lg-block">
-            <ul>
-                <li class="mb-3">Av Maipu 3000</li>
-                <li class="mb-3">4-756-0000</li>
-                <li>7:00 a 19:00</li>
-            </ul>
+        <div class="direccion">
+          <ul class="mb-lg-0 p-0">
+            <li class="mb-4"><i class='bx bx-fw bx-map bx-sm'></i> Av Maipú 3000</li>
+            <li class="mb-4"><i class='bx bx-fw bx-phone bx-sm'></i> 4-756-0000</li>
+            <li><i class='bx bx-time-five bx-fw bx-sm'></i> 7:00 a 19:00</li>
+          </ul>
         </div>
-        <div class="redes d-flex justify-content-around py-3 flex-lg-column mr-md-5 mr-lg-0">
-          <a href="#"><i class='bx bxl-facebook-square bx-lg mb-lg-4' style='color:#ffff' ></i></a>
-          <a href="#"><i class='bx bxl-instagram bx-lg mb-lg-4' style='color:#ffff'  ></i></a>
-          <a href="#"><i class='bx bxl-whatsapp bx-lg ' style='color:#ffff'  ></i></a>
+        <div class="redes d-flex justify-content-around align-items-center py-5 mr-md-5 mr-lg-0">
+          <a href="https://es-la.facebook.com/"><i class='bx bxl-facebook-square bx-lg  ' style='color:#ffff' ></i></a>
+          <a href="https://www.instagram.com/?hl=es"><i class='bx bxl-instagram bx-lg mx-4 mx-md-0 my-md-4' style='color:#ffff'  ></i></a>
+          <a href="https://www.whatsapp.com/?lang=es"><i class='bx bxl-whatsapp bx-lg ' style='color:#ffff'  ></i></a>
         </div>
+      </div>
     </div>
-    <!-- ---------------------------scripts------------------------->
+    <!-- ---------------------------scripts bootstrap------------------------->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ---------------------------scripts propio------------------------->
     <script src="js/productos.js"></script>
     <script src="js/carrito.js"></script>
-    <script src="js/main.js"></script>
-    <!-- ----------------------botstrap-------------------------- -->
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>   
 </body>
-
 </html>

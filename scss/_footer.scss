@@ -1,23 +1,89 @@
 #footer{
-    background-color: $bgdColor-black;
-    .contacto{
-        ul{
-            li{
-                list-style: none;
-                text-transform: uppercase;
-                color: $fontColor-light;
-
-            } 
+    .suscripcion{
+        background-color: rgb(114, 190, 0);
+        #news{
+            color: $titleColor-white;            
+            .textNews{
+                h2{ 
+                    font-size: 2.5rem;  
+                }
+                p{
+                    font-size: 1.1rem;
+                    text-shadow: $textShadow;
+                    text-align: start;
+                    &::before{
+                        content: "★ ";
+                    }
+                }
+            }
+            .datos{
+                input{
+                    width: 100%;
+                    max-width: 400px;
+                    border: none;
+                    border-bottom: 2px solid green;
+                    background: none;
+                    outline: none;
+                    &::placeholder{
+                        color:rgb(255, 255, 255);
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        text-shadow: $textShadow;
+                    }
+                    &:focus{
+                        background: greenyellow;
+                    }
+                }
+                button{
+                    height: 2.5rem;
+                    width: 9rem;
+                    background-color: green;
+                    &:focus{
+                        background-color: greenyellow;
+                    }
+                    &:hover{
+                        border:$btn-borderColorDark;
+                    }
+                }
+            }
         }
     }
-    .redes{
-        width: 75%;
-    }  
+    .contacto{
+        background-color: $bgdColor-black;
+        .direccion{
+            ul{
+                li{
+                    list-style: none;
+                    text-transform: uppercase;
+                    color: $fontColor-light;
+                } 
+            }
+        }
+    }
 }
 @media all and(min-width: 992px){
     #footer{
-        .redes{
-            width: 5%;
-        }  
+        .suscripcion{
+            #news{
+                width: 100%;
+                .textNews{
+                    width: 50%;
+                    div{
+                        p{
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+                .datos{
+                    width: 50%;
+                }
+            }
+        }
+        .contacto{
+            .redes{
+                width: 15%;
+
+            }
+        }
     }
 }
